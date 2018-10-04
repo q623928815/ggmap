@@ -127,7 +127,7 @@ get_googlemap <- function(
   language = "en-EN",
   messaging = FALSE, urlonly = FALSE, filename = NULL, color = c("color","bw"),
   force = FALSE, where = tempdir(), archiving = FALSE,
-  ext = "com", inject = "",
+  ext = "www.google.cn", inject = "",
   region, markers, path, visible, style, ...
 ){
 
@@ -253,7 +253,7 @@ get_googlemap <- function(
   ##### construct url
   ############################################################
 
-  base_url <- sprintf("https://maps.googleapis.%s/maps/api/staticmap?", ext)
+  base_url <- sprintf("https://%s/maps/api/staticmap?", ext)
   center_url <- if(all(is.numeric(center))){ # lon/lat specification
     center <- round(center, digits = 6)
     lon <- center[1]; lat <- center[2]
